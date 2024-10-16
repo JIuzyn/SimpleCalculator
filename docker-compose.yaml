@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  simple-calculator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: simple-calculator:latest
+    container_name: simple_calculator
+    volumes:
+      - ./SimpleCalculator:/app/SimpleCalculator
+    environment:
+      - DISPLAY=${DISPLAY}  
+    network_mode: host  
